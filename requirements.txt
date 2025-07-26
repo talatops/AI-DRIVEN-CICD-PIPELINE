@@ -1,0 +1,4 @@
+anvil-uplink
+PyGithub
+boto3
+python-dotenv
