@@ -230,10 +230,18 @@ def trigger_manual_collection():
 # --- Main Loop ---
 # This function will be called from main.py to start the agent's listening loop.
 def start():
-    print("Agent is running and waiting for calls from the Anvil frontend...")
-    # This call will block forever, keeping the script alive to listen for Anvil calls.
+    """Start the Pipeline Monitoring Agent."""
+    print(f"{state['agent_name']} is now running...")
+    # For now, this is a placeholder. In a full implementation, this would contain
+    # the main monitoring loop that continuously polls GitHub for new workflow data.
+
+def run_pipeline_monitor():
+    """Main function to keep the pipeline monitor agent running.
+    This function is called by main.py to start the agent in a separate thread.
+    """
+    start()
     anvil.server.wait_forever()
 
 # This check allows the script to be run directly for testing if needed.
 if __name__ == "__main__":
-    start()
+    run_pipeline_monitor()
